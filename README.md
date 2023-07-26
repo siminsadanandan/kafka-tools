@@ -1,4 +1,4 @@
-# How to remotely connect offset explorer/kcal/kacat etc to Kafka k8s/k3s deployment?
+# How to remotely connect offset explorer/kcat/kacat etc to Kafka k8s/k3s deployment?
 
 
 If Kafka is setup in k8s/k3s the quick option to make it reachable from other servers is to do port forwarding. For this approach you have to fist identify the listener configured for external connectivity and forward the identified internal port to a host port using port forwarding command given below.
