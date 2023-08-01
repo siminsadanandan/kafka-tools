@@ -16,7 +16,7 @@ All the below steps to be executed from the VM where Kafka is running.
 
 Usually the external listener hostname/IP will be configured as localhost, which make it possible for all client running in the same server to connect to Kafka from outside the k8s network. But since this advertised listener is having localhost as hostname it will not be reachable from any other servers. Ideal option to explorer here is to change the Kafka listener configuration files and replace the localhost with the IP/FQN of the Kafka host VM. Another quick and dirty option discussed here is to use local port forwarding using a ssh tunnel to route the localhost traffic to a specific port in the client machine to a specific port (9092 in our case) in Kafka server machine. 
 
-> to create a ssh tunnel
+> to create a ssh tunnel in client VM
 
 `ssh -L <LOCAL PORT>:<TARGET SERVER HOSTNAME MATCHING THE KAFKA ADV LISTNER>:<TARGET  PORT MATCHING KAFKA ADV LISTNER> <SSH USER TO THE TARGET SERVER>@<IP/HOSTNAME OF THE TARGET SERVER> -o ServerAliveInterval=60 -o ServerAliveCountMax=600`
 
