@@ -5,7 +5,7 @@ If Kafka is setup in k8s/k3s the quick option to make it reachable from other se
 
 All the below steps to be executed from the VM where Kafka is running.
 
-> to get the Kafka pod name
+> to get the Kafka pod name, replace the NAMESPACE and  LABEL NAME, label name you can get when you list pods with additional switch _--show-labels_
 
 `export POD_NAME=$(kubectl get pods --namespace <NAMESPACE> -l "<LABEL NAME>" -o jsonpath="{.items[0].metadata.name}")`
 
