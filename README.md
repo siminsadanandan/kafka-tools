@@ -21,9 +21,9 @@ Usually the external listener hostname/IP will be configured as localhost, which
 `ssh -L <LOCAL PORT>:<TARGET SERVER HOSTNAME MATCHING THE KAFKA ADV LISTNER>:<TARGET  PORT MATCHING KAFKA ADV LISTNER> <SSH USER TO THE TARGET SERVER>@<IP/HOSTNAME OF THE TARGET SERVER> -o ServerAliveInterval=60 -o ServerAliveCountMax=600`
 
 Example below, we are forwarding local port 9092 to localhost 9092 in the target machine, for the ssh tunnel you are connecting as user 
+sisadana and the IP of the target VM is 172.174.140.15. User will be prompted to authenticate.  
 
-`sisadana and the IP of the target VM is 172.174.140.15. User will be prompted to authenticate.  
-ssh -L 9092:localhost:9092 sisadana@172.174.140.15 -o ServerAliveInterval=60 -o ServerAliveCountMax=600`
+`ssh -L 9092:localhost:9092 sisadana@172.174.140.15 -o ServerAliveInterval=60 -o ServerAliveCountMax=600`
 
 In windows machine user can use putty to configure this SSH tunnel. 
 
