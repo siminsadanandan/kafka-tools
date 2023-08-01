@@ -7,11 +7,12 @@ All the below steps to be executed from the VM where Kafka is running.
 
 > to get the Kafka pod name
 
-`export POD_NAME=$(kubectl get pods --namespace <NAMESPACE> -l “<LABEL NAME>” -o jsonpath="{.items[0].metadata.name}")`
+`export POD_NAME=$(kubectl get pods --namespace <NAMESPACE> -l "<LABEL NAME>" -o jsonpath="{.items[0].metadata.name}")`
 
 > port forwarding, replace HOST PORT with the internal port of the external listener = 9092, external listener port from the advertised Kafka listener configuration = 9092
 > 
-__kubectl --namespace <NAMESPACE> port-forward $POD_NAME 9092:<HOST PORT>__
+
+`kubectl --namespace <NAMESPACE> port-forward $POD_NAME 9092:<HOST PORT>`
 
 
 Usually the external listener hostname/IP will be configured as localhost, which make it possible for all client running in the same server to connect to Kafka from outside the k8s network. But since this advertised listener is having localhost as hostname it will not be reachable from any other servers. Ideal option to explorer here is to change the Kafka listener configuration files and replace the localhost with the IP/FQN of the Kafka host VM. Another quick and dirty option discussed here is to use local port forwarding using a ssh tunnel to route the localhost traffic to a specific port in the client machine to a specific port (9092 in our case) in Kafka server machine. 
