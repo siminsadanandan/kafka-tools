@@ -5,9 +5,9 @@ If Kafka is setup in k8s/k3s the quick option to make it reachable from other se
 
 All the below steps to be executed from the VM where Kafka is running.
 
-> to the Kafka pod name
+> to get the Kafka pod name
 
-__export POD_NAME=$(kubectl get pods --namespace <NAMESPACE> -l “<LABEL NAME>” -o jsonpath="{.items[0].metadata.name}")__
+`export POD_NAME=$(kubectl get pods --namespace <NAMESPACE> -l “<LABEL NAME>” -o jsonpath="{.items[0].metadata.name}")`
 
 > port forwarding, replace HOST PORT with the internal port of the external listener = 9092, external listener port from the advertised Kafka listener configuration = 9092
 > 
