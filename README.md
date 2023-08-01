@@ -25,7 +25,8 @@ sisadana and the IP of the target VM is 172.174.140.15. User will be prompted to
 
 `ssh -L 9092:localhost:9092 sisadana@172.174.140.15 -o ServerAliveInterval=60 -o ServerAliveCountMax=600`
 
-In windows machine user can use putty to configure this SSH tunnel.
+
+> In windows machine user can use putty to configure this SSH tunnel, see the tunnel config rules in the screenshot below. 
 
 ![putty-config](putty_ssh_tunnel_config.png "putty-ssh-tunnel")
 
